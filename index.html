@@ -3,54 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>WELXOLAS</title>
-
-  <!-- Evita indexación -->
-  <meta name="robots" content="noindex, nofollow">
-
-  <!-- Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- INTRODUCCIÓN -->
-  <header class="intro">
-    <h1>WELXOLAS</h1>
-    <p>
-      Catálogo musical personal.  
-      Explora la tabla y reproduce cada pista según la recomendación indicada.
-    </p>
-  </header>
+  <h1>WELXOLAS</h1>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-  <main>
-    <div id="music-list" class="music-list">
-      <!-- Aquí se genera la lista desde el JSON -->
-    </div>
-  </main>
+  <div id="music-list"></div>
 
-  <!-- REPRODUCTOR -->
-  <div id="player" class="player hidden">
+  <!-- Reproductor -->
+  <div id="player" class="hidden">
+    <img id="player-cover" src="" alt="">
     <div class="player-info">
-      <img id="player-cover" src="" alt="cover">
-      <div>
-        <div id="player-title"></div>
-        <div id="player-artist"></div>
+      <div id="player-title"></div>
+      <div id="player-artist"></div>
+      <div class="controls">
+        <button id="play-pause">⏸</button>
+        <input type="range" id="progress" value="0">
+        <span id="time">0:00</span>
       </div>
     </div>
-
     <audio id="audio"></audio>
-
-    <div class="player-controls">
-      <button id="play-pause">⏸</button>
-      <input type="range" id="progress" value="0">
-      <span id="time">0:00</span>
-    </div>
   </div>
 
-  <!-- LÓGICA -->
   <script src="app.js"></script>
 </body>
 </html>

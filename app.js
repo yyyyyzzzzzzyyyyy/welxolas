@@ -1,58 +1,51 @@
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    const list = document.getElementById('music-list');
+const list = document.getElementById('music-list');
 
+fetch('data.json')
+  .then(res => res.json())
+  .then(data => {
     data.forEach(track => {
-      const card = document.createElement('div');
-      card.className = 'track';
+      const row = document.createElement('div');
+      row.className = 'track';
 
       const img = document.createElement('img');
       img.src = track["ENLACE IMAGEN"] || '';
-      card.appendChild(img);
+      row.appendChild(img);
 
       const playBtn = document.createElement('button');
       playBtn.className = 'play-btn';
       playBtn.textContent = '▶';
-      card.appendChild(playBtn);
+      row.appendChild(playBtn);
 
       const info = document.createElement('div');
       info.className = 'track-info';
 
-      const title = document.createElement('div');
-      title.className = 'track-title';
-      title.textContent = track["TÍTULO"] || '';
-      info.appendChild(title);
-
-      const artist = document.createElement('div');
-      artist.className = 'track-artist';
-      artist.textContent = track["ARTISTAS"] || '';
-      info.appendChild(artist);
-
       const meta = document.createElement('div');
       meta.className = 'track-meta';
       meta.innerHTML = `
-        ${track["FORMA RECOMENDADA DE ESCUCHAR"] || ''}<br>
-        ${track["ESTADO"] || ''}<br>
-        ${track["CONTEXTO"] || ''}
+        <div><strong>TÍTULO:</strong> ${track["TÍTULO"] || ''}</div>
+        <div><strong>TIPO DE INTERÉS:</strong> ${track["TIPO DE INTERÉS"] || ''}</div>
+        <div><strong>FORMA RECOMENDADA DE ESCUCHAR:</strong> ${track["FORMA RECOMENDADA DE ESCUCHAR"] || ''}</div>
+        <div><strong>ESTADO:</strong> ${track["ESTADO"] || ''}</div>
+        <div><strong>ÁLBUM AL QUE PERTENECE:</strong> ${track["ALBUM AL QUE PERTENECE"] || ''}</div>
+        <div><strong>AÑO:</strong> ${track["AÑO"] || ''}</div>
+        <div><strong>DURACIÓN:</strong> ${track["DURACION"] || ''}</div>
+        <div><strong>NOTA EXTRA:</strong> ${track["NOTA EXTRA"] || ''}</div>
       `;
+
       info.appendChild(meta);
+      row.appendChild(info);
+      list.appendChild(row);
 
-      card.appendChild(info);
-      list.appendChild(card);
-
-      playBtn.addEventListener('click', () => {
-        playTrack(track);
-      });
+      playBtn.onclick = () => playTrack(track);
     });
   });
 
 const audio = document.getElementById('audio');
 const player = document.getElementById('player');
-const playerCover = document.getElementById('player-cover');
-const playerTitle = document.getElementById('player-title');
-const playerArtist = document.getElementById('player-artist');
-const playPauseBtn = document.getElementById('play-pause');
+const cover = document.getElementById('player-cover');
+const title = document.getElementById('player-title');
+const artist = document.getElementById('player-artist');
+const playPause = document.getElementById('play-pause');
 const progress = document.getElementById('progress');
 const time = document.getElementById('time');
 
@@ -60,35 +53,31 @@ function playTrack(track) {
   audio.src = track["ENLACE CANCIÓN"];
   audio.play();
 
-  playerCover.src = track["ENLACE IMAGEN"] || '';
-  playerTitle.textContent = track["TÍTULO"] || '';
-  playerArtist.textContent = track["ARTISTAS"] || '';
+  cover.src = track["ENLACE IMAGEN"] || '';
+  title.textContent = track["TÍTULO"] || '';
+  artist.textContent = track["ARTISTAS"] || '';
 
   player.classList.remove('hidden');
-  playPauseBtn.textContent = '⏸';
+  playPause.textContent = '⏸';
 }
 
-playPauseBtn.addEventListener('click', () => {
+playPause.onclick = () => {
   if (audio.paused) {
     audio.play();
-    playPauseBtn.textContent = '⏸';
+    playPause.textContent = '⏸';
   } else {
     audio.pause();
-    playPauseBtn.textContent = '▶';
+    playPause.textContent = '▶';
   }
-});
+};
 
-audio.addEventListener('timeupdate', () => {
+audio.ontimeupdate = () => {
   progress.value = (audio.currentTime / audio.duration) * 100 || 0;
+  const m = Math.floor(audio.currentTime / 60);
+  const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+  time.textContent = `${m}:${s}`;
+};
 
-  const minutes = Math.floor(audio.currentTime / 60);
-  const seconds = Math.floor(audio.currentTime % 60)
-    .toString()
-    .padStart(2, '0');
-
-  time.textContent = `${minutes}:${seconds}`;
-});
-
-progress.addEventListener('input', () => {
+progress.oninput = () => {
   audio.currentTime = (progress.value / 100) * audio.duration;
-});
+};
