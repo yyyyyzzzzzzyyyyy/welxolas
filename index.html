@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>WELXOLAS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>WELXOLAS</h1>
+
+<div id="music-list"></div>
+
+<!-- REPRODUCTOR -->
+<div id="player" class="hidden">
+  <img id="player-cover">
+
+  <div class="player-info">
+    <div id="player-title"></div>
+
+    <div class="player-controls">
+      <button id="back-10">⏮️</button>
+      <button id="play-pause">▶</button>
+      <button id="forward-10">⏭️</button>
+
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress" value="0">
+      <span id="duration">0:00</span>
+
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </div>
+  </div>
+
+  <audio id="audio"></audio>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

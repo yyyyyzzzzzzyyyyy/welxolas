@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 40px;
+  background: #0d0d0d;
+  color: #eaeaea;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* === LISTA === */
+
+.track {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #222;
+}
+
+.track img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.play-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #444;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.track-info {
+  flex: 1;
+}
+
+.track-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.badge.interest { background:#fff; color:#000; }
+.badge.listen { background:#1aff9c; color:#000; }
+.badge.status { background:#c9a227; color:#000; }
+
+.track-meta {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.context-box {
+  border: 2px solid #1aff9c;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.context-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.note-box {
+  background: #111;
+  border-left: 4px solid #fff;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+/* === REPRODUCTOR === */
+
+#player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  border-top: 1px solid #222;
+  padding: 10px 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+#player img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.player-info {
+  flex: 1;
+}
+
+#player-title {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-controls button {
+  background: none;
+  border: 1px solid #444;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.player-controls input[type="range"] {
+  cursor: pointer;
+}
+
+#progress {
+  flex: 1;
+}
+
+#volume {
+  width: 80px;
+}
+
+.hidden {
+  display: none;
+}
