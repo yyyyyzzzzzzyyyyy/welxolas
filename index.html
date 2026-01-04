@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Archivo Ye – Guía Curada</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#0b0b0f;
+  --card:#141420;
+  --accent:#8b5cf6;
+  --accent2:#ec4899;
+  --text:#f5f5f7;
+  --muted:#9ca3af;
+  --border:rgba(255,255,255,.08);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:radial-gradient(1200px 600px at top,var(--accent2)10%,transparent 40%),var(--bg);
+  font-family:Inter,system-ui,Segoe UI,sans-serif;
+  color:var(--text);
+}
+
+/* ---------- HEADER ---------- */
+header{
+  padding:60px 20px 40px;
+  max-width:1200px;
+  margin:auto;
+}
+header h1{
+  font-size:2.6rem;
+  margin:0 0 10px;
+}
+header p{
+  color:var(--muted);
+  max-width:700px;
+  line-height:1.6;
+}
+
+/* ---------- TAG GUIDE ---------- */
+.guide{
+  max-width:1200px;
+  margin:0 auto 60px;
+  padding:0 20px;
+}
+.guide h2{
+  margin-bottom:20px;
+}
+.guide-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.guide-card{
+  background:linear-gradient(180deg,var(--card),#0f0f18);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  transition:.3s;
+}
+.guide-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+}
+.guide-card h3{
+  margin:0 0 8px;
+  color:var(--accent);
+}
+.guide-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.5;
+}
+
+/* ---------- SONG LIST ---------- */
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px 160px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+}
+
+.song{
+  background:linear-gradient(180deg,var(--card),#0f0f18);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:.3s;
+}
+.song:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent2);
+}
+
+.song img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.song-content{
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.song h3{
+  margin:0;
+  font-size:1.05rem;
+  line-height:1.3;
+}
+
+.meta{
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+.context{
+  font-size:.9rem;
+  color:#d1d5db;
+  line-height:1.45;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.tag{
+  font-size:.7rem;
+  padding:4px 8px;
+  border-radius:999px;
+  background:rgba(139,92,246,.15);
+  color:#e9d5ff;
+  border:1px solid rgba(139,92,246,.3);
+}
+
+.play-btn{
+  margin-top:auto;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border:none;
+  color:white;
+  padding:10px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* ---------- PLAYER ---------- */
+.player{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(15,15,25,.95);
+  backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);
+  padding:12px 16px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  z-index:999;
+}
+
+.player-title{
+  flex:1;
+  font-size:.9rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.controls button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:1.1rem;
+  cursor:pointer;
+}
+
+.progress{
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.progress input[type=range]{
+  flex:1;
+}
+
+.time{
+  font-size:.75rem;
+  color:var(--muted);
+}
+
+.volume{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.volume input{
+  width:80px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Archivo Ye (Curado)</h1>
+  <p>
+    Esta no es una lista cronológica ni definitiva.  
+    Es una guía curada basada en rarezas, descartes, demos y versiones alternativas,
+    categorizadas según qué tan probable es que conecten contigo.
+  </p>
+</header>
+
+<section class="guide">
+  <h2>Guía de Etiquetas</h2>
+  <div class="guide-grid">
+    <div class="guide-card">
+      <h3>SEGURO TE GUSTA</h3>
+      <p>Canciones prácticamente terminadas o muy cercanas a su versión final. Alta probabilidad de que conecten contigo.</p>
+    </div>
+    <div class="guide-card">
+      <h3>TAL VEZ TE INTERESA</h3>
+      <p>Su nombre habla por sí solo: es un punto medio que no supe categorizar en base a tus gustos.</p>
+    </div>
+    <div class="guide-card">
+      <h3>RELLENO</h3>
+      <p>Ideas interesantes, demos tempranos o versiones incompletas que aportan contexto, pero no son esenciales.</p>
+    </div>
+    <div class="guide-card">
+      <h3>FULL INEDITO</h3>
+      <p>Canciones completamente inéditas, nunca lanzadas oficialmente y poco conocidas incluso entre fans.</p>
+    </div>
+    <div class="guide-card">
+      <h3>FILTRADA / EXCLUSIVA</h3>
+      <p>Material filtrado o versiones exclusivas que muestran caminos creativos alternativos.</p>
+    </div>
+  </div>
+</section>
+
+<main id="songs"></main>
+
+<!-- PLAYER -->
+<div class="player">
+  <div class="player-title" id="playerTitle">Nada reproduciéndose</div>
+
+  <div class="controls">
+    <button onclick="seek(-10)"><i class="fa-solid fa-backward"></i></button>
+    <button onclick="togglePlay()"><i id="playIcon" class="fa-solid fa-play"></i></button>
+    <button onclick="seek(10)"><i class="fa-solid fa-forward"></i></button>
+  </div>
+
+  <div class="progress">
+    <span class="time" id="currentTime">0:00</span>
+    <input type="range" min="0" max="100" value="0" id="progress">
+    <span class="time" id="duration">0:00</span>
+  </div>
+
+  <div class="volume">
+    <i class="fa-solid fa-volume-high"></i>
+    <input type="range" min="0" max="1" step="0.01" value="1" id="volume">
+  </div>
+</div>
+
+<audio id="audio"></audio>
+
+<script>
+const container = document.getElementById("songs");
+const audio = document.getElementById("audio");
+const playIcon = document.getElementById("playIcon");
+const title = document.getElementById("playerTitle");
+const progress = document.getElementById("progress");
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
+const volume = document.getElementById("volume");
+
+fetch("data.json")
+.then(r=>r.json())
+.then(data=>{
+  data.forEach(song=>{
+    const card = document.createElement("div");
+    card.className="song";
+
+    card.innerHTML=`
+      <img src="${song["ENLACE IMAGEN"].replace("view?usp=drive_link","preview")}">
+      <div class="song-content">
+        <h3>${song["TÍTULO"].replace(/\n/g," ")}</h3>
+        <div class="meta">${song["ARTISTAS"]} · ${song["AÑO"]} · ${song["DURACIÓN"]}</div>
+        <div class="context">${song["CONTEXTO"]}</div>
+        <div class="tags">
+          <span class="tag">${song["TIPO DE INTERÉS"]}</span>
+          <span class="tag">${song["ESTADO"]}</span>
+          <span class="tag">${song["FORMA RECOMENDADA\nDE ESCUCHAR"]}</span>
+        </div>
+        <button class="play-btn" onclick="playSong('${song["ENLACE CANCIÓN"].replace("view?usp=drive_link","preview")}','${song["TÍTULO"].replace(/\n/g," ")}')">
+          ▶ Reproducir
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+});
+
+function playSong(src,name){
+  audio.src=src;
+  audio.play();
+  title.textContent=name;
+  playIcon.className="fa-solid fa-pause";
+}
+
+function togglePlay(){
+  if(audio.paused){
+    audio.play();
+    playIcon.className="fa-solid fa-pause";
+  }else{
+    audio.pause();
+    playIcon.className="fa-solid fa-play";
+  }
+}
+
+function seek(sec){
+  audio.currentTime+=sec;
+}
+
+audio.ontimeupdate=()=>{
+  progress.value=(audio.currentTime/audio.duration)*100||0;
+  currentTime.textContent=format(audio.currentTime);
+  duration.textContent=format(audio.duration);
+};
+
+progress.oninput=()=>{
+  audio.currentTime=(progress.value/100)*audio.duration;
+};
+
+volume.oninput=()=>audio.volume=volume.value;
+
+function format(t){
+  if(!t)return "0:00";
+  const m=Math.floor(t/60);
+  const s=Math.floor(t%60).toString().padStart(2,"0");
+  return `${m}:${s}`;
+}
+</script>
+
+</body>
+</html>
