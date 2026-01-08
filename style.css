@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  padding: 110px 40px 120px;
+  background: radial-gradient(circle at top, #111, #000);
+  color: #eaeaea;
+  font-family: system-ui, sans-serif;
+}
+
+/* BANNER */
+.top-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: #050505;
+  border-bottom: 1px solid #1f1f1f;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  z-index: 1000;
+}
+
+.logo { letter-spacing: 5px; }
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  background: #0a0a0a;
+  color: #eaeaea;
+  border: 1px solid #1f1f1f;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.top-banner a {
+  margin-left: auto;
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+/* TRACK */
+.track {
+  display: flex;
+  gap: 18px;
+  padding: 24px;
+  margin-bottom: 22px;
+  background: #0a0a0a;
+  border-radius: 16px;
+  border: 1px solid #1f1f1f;
+}
+
+.track img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+}
+
+.play-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #1aff9c;
+  cursor: pointer;
+}
+
+/* INFO */
+.track-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.green { background: #1aff9c; }
+.blue { background: #3b82f6; }
+.yellow { background: #facc15; }
+.red { background: #ef4444; }
+
+.track-meta {
+  font-size: 13px;
+  opacity: .85;
+  margin-bottom: 14px;
+}
+
+.context-box {
+  border: 2px solid #1aff9c;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+/* GUÍA */
+.guide {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.guide-content {
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: #000;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-scroll {
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.guide-row {
+  display: flex;
+  gap: 18px;
+  margin: 14px 0;
+}
+
+.guide button {
+  padding: 12px;
+  background: #1aff9c;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* PLAYER */
+#player {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background: #050505;
+  border-top: 1px solid #1f1f1f;
+  display: flex;
+  gap: 16px;
+  padding: 10px 20px;
+  z-index: 3000;
+}
+
+#player img {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+}
+
+.player-info { flex: 1; }
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hidden { display: none; }
