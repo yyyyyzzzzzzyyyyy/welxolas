@@ -1,0 +1,215 @@
+/* ================= BASE ================= */
+
+body {
+  margin: 0;
+  padding: 110px 40px 120px;
+  background:
+    radial-gradient(circle at 20% 10%, #1a1a1a 0%, transparent 40%),
+    radial-gradient(circle at 80% 0%, #121212 0%, transparent 35%),
+    #000;
+  color: #eaeaea;
+  font-family: system-ui, sans-serif;
+  animation: fadeIn .6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* ================= BANNER ================= */
+
+.top-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: linear-gradient(180deg,#0b0b0b,#040404);
+  border-bottom: 1px solid #1f1f1f;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  z-index: 1000;
+}
+
+.logo {
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+.filters select {
+  background: #0a0a0a;
+  color: #eaeaea;
+  border: 1px solid #1f1f1f;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.top-banner a {
+  margin-left: auto;
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+/* ================= TRACK ================= */
+
+.track {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  padding: 26px;
+  margin-bottom: 26px;
+  background: #0a0a0a;
+  border: 1px solid #1f1f1f;
+  border-radius: 18px;
+  animation: slideUp .4s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(16px) }
+  to { opacity:1; transform:none }
+}
+
+.track img {
+  width: 90px;
+  height: 90px;
+  border-radius: 14px;
+  cursor: zoom-in;
+}
+
+/* NÚMERO */
+.track-number {
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1aff9c;
+  color: #000;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PLAY */
+.play-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #1aff9c;
+  cursor: pointer;
+}
+
+/* BADGES */
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  color: #000;
+}
+
+.green { background:#1aff9c }
+.blue { background:#3b82f6 }
+.yellow { background:#facc15 }
+.red { background:#ef4444 }
+
+/* CONTEXTO */
+.context-box {
+  border: 2px solid rgba(26,255,156,.6);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+/* ================= PLAYER ================= */
+
+#player {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background: #050505;
+  border-top: 1px solid #1f1f1f;
+  display: flex;
+  gap: 16px;
+  padding: 12px 20px;
+  z-index: 3000;
+}
+
+#player img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #1aff9c;
+  cursor: pointer;
+}
+
+/* ================= MODALES ================= */
+
+/* OCULTAR REAL */
+.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* IMAGEN */
+#image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;
+}
+
+#image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+}
+
+#close-image {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* GUÍA */
+.guide {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
