@@ -1,0 +1,291 @@
+/* =====================
+   BASE
+===================== */
+
+body {
+  margin: 0;
+  padding: 110px 40px 120px;
+  background:
+    radial-gradient(circle at 20% 10%, #1a1a1a 0%, transparent 40%),
+    radial-gradient(circle at 80% 0%, #121212 0%, transparent 35%),
+    #000;
+  color: #eaeaea;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* =====================
+   BANNER
+===================== */
+
+.top-banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: linear-gradient(180deg, #0b0b0b, #040404);
+  border-bottom: 1px solid #1f1f1f;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  letter-spacing: 6px;
+  font-weight: 300;
+  opacity: .9;
+}
+
+.top-banner a {
+  margin-left: auto;
+  color: #bfbfbf;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color .2s ease;
+}
+
+.top-banner a:hover {
+  color: #1aff9c;
+}
+
+/* =====================
+   FILTROS
+===================== */
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters select {
+  background: rgba(15,15,15,.9);
+  color: #eaeaea;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  transition: all .2s ease;
+}
+
+.filters select:hover {
+  border-color: #1aff9c;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: #1aff9c;
+  box-shadow: 0 0 0 2px rgba(26,255,156,.15);
+}
+
+/* =====================
+   TRACK
+===================== */
+
+.track {
+  display: flex;
+  gap: 18px;
+  padding: 26px;
+  margin-bottom: 26px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)),
+    #0a0a0a;
+  border-radius: 18px;
+  border: 1px solid #1f1f1f;
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: slideUp .4s ease both;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(14px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+.track:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.6);
+}
+
+.track img {
+  width: 90px;
+  height: 90px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* =====================
+   PLAY
+===================== */
+
+.play-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #1aff9c;
+  cursor: pointer;
+  transition: transform .15s ease, color .15s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.15);
+  color: #5dffd0;
+}
+
+/* =====================
+   INFO
+===================== */
+
+.track-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: .5px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  transition: transform .15s ease;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+}
+
+/* COLORES */
+.green { background: linear-gradient(135deg, #1aff9c, #00d88a); }
+.blue { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+.yellow { background: linear-gradient(135deg, #facc15, #fde047); }
+.red { background: linear-gradient(135deg, #ef4444, #fb7185); }
+
+/* =====================
+   META
+===================== */
+
+.track-meta {
+  font-size: 13px;
+  opacity: .85;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* =====================
+   CONTEXTO
+===================== */
+
+.context-box {
+  border: 2px solid rgba(26,255,156,.6);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  background: rgba(26,255,156,.05);
+}
+
+/* =====================
+   GUÍA
+===================== */
+
+.guide {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn .25s ease;
+}
+
+.guide-content {
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: linear-gradient(180deg, #050505, #000);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 40px 80px rgba(0,0,0,.8);
+}
+
+.guide-scroll {
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.guide-row {
+  display: flex;
+  gap: 18px;
+  margin: 16px 0;
+  align-items: center;
+}
+
+.guide button {
+  padding: 14px;
+  background: linear-gradient(135deg, #1aff9c, #00d88a);
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 0 0 20px 20px;
+}
+
+/* =====================
+   PLAYER
+===================== */
+
+#player {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background:
+    linear-gradient(180deg, #070707, #020202);
+  border-top: 1px solid #1f1f1f;
+  display: flex;
+  gap: 16px;
+  padding: 12px 20px;
+  z-index: 3000;
+  animation: slideUp .25s ease;
+}
+
+#player img {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-controls button {
+  transition: transform .15s ease;
+}
+
+.player-controls button:hover {
+  transform: scale(1.2);
+}
+
+.hidden { display: none; }
