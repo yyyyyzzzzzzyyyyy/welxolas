@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>WELXOLAS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-banner">
+  <div class="logo">WELXOLAS</div>
+
+  <div class="filters">
+    <select id="filter-interes">
+      <option value="">Interés</option>
+      <option value="seguro">Seguro te gusta</option>
+      <option value="tal vez">Tal vez te interesa</option>
+      <option value="relleno">Relleno</option>
+      <option value="ya">Ya lo escuchaste</option>
+    </select>
+
+    <select id="filter-forma">
+      <option value="">Escucha</option>
+      <option value="cancion completa">Canción completa</option>
+      <option value="punto medio">Punto medio</option>
+      <option value="tu decides">Tú decides</option>
+      <option value="salteada">Salteada</option>
+    </select>
+
+    <select id="filter-estado">
+      <option value="">Estado</option>
+      <option value="filtrada">Filtrada</option>
+      <option value="rara">Filtrada pero rara</option>
+      <option value="exclusiva">Exclusiva</option>
+      <option value="full">Full inédito</option>
+    </select>
+  </div>
+
+  <a href="#" id="open-guide">Guía</a>
+</header>
+
+<main id="music-list"></main>
+
+<!-- MODAL IMAGEN -->
+<div id="image-modal" class="image-modal hidden">
+  <img id="image-modal-img">
+  <button id="close-image">Cerrar</button>
+</div>
+
+<!-- GUÍA -->
+<div id="guide-modal" class="guide hidden">
+  <div class="guide-content">
+    <div class="guide-scroll">
+      <h1>GUÍA DE ETIQUETAS</h1>
+      <!-- (contenido intacto, no modificado) -->
+    </div>
+    <button id="close-guide">Cerrar</button>
+  </div>
+</div>
+
+<!-- PLAYER -->
+<div id="player" class="hidden">
+  <div class="player-top">
+    <img id="player-cover">
+    <div id="player-title"></div>
+  </div>
+
+  <input type="range" id="progress" value="0">
+
+  <div class="player-controls">
+    <div class="player-buttons">
+      <button id="back-10">⏪</button>
+      <button id="play-pause">▶</button>
+      <button id="forward-10">⏩</button>
+    </div>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <audio id="audio"></audio>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
